@@ -23,7 +23,6 @@ def create_parameter1():
 def create_request1(request_data: dict):
     request = requests.get('https://api.datamuse.com/words', request_data)
     sound_json = request.json()
-    # print(sound_json)
     return sound_json
 
 
