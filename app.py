@@ -11,20 +11,22 @@ def index():
 @app.route("/", methods=["POST"])
 def new_route():
     form_words = request.form["word"]
-    api_words = create_parameter1()
-    return render_template("pass.html",  n = form_words, lots_words = api_words) 
+    api_words = create_parameter(form_words)
+    return render_template("pass.html",  form_response = form_words, lots_words = api_words) 
 
 
-def create_parameter1():
+def create_parameter(user_resonse: str)-> str:
     dict_key = "ml"
-    parameter = {dict_key: "ringing in the ear"}
-    return create_request1(parameter)
+    parameter = {dict_key: user_resonse}
+    return create_request(parameter)
 
-def create_request1(request_data: dict):
-    request = requests.get('https://api.datamuse.com/words', request_data)
-    sound_json = request.json()
-    # print(sound_json)
-    return sound_json
+def create_request(dictionary_data: dict):
+    request = requests.get('https://api.datamuse.com/words', dictionary_data)
+    return process_request(request)
+
+def process_request(request):
+    json_data = request.json()
+    return json_data
 
 
 
