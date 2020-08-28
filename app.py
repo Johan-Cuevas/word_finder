@@ -27,9 +27,13 @@ def create_request(dictionary_data: dict):
 def process_request(request):
     json_data = request.json()
     return json_data
+=======
+    parameter = {dict_key: "ringing in the ear"}
+    return create_request1(parameter)
 
-
+def process_request(request):
+    json_data = request.json()
+    return json_data
 
 if __name__ == "__main__":
     app.run(debug=True)
-
