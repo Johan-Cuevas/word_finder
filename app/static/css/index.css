@@ -1,0 +1,51 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: #d3d3d3;
+}
+
+#first-div { 
+    display: grid
+}
+
+#myheader {
+    margin-bottom: 5rem;
+    display: grid;
+
+}
+
+#top-page{
+    display: grid;
+    grid-area: head;
+    grid-template-areas: ".  . head";
+
+}
+
+/* This is the form grid */
+
+#myform {
+    display: grid;
+    grid-template-areas: ". label ."
+    ". in ."
+    ". sub-button .";
+}
+
+#myinput  {
+    display: grid;
+    grid-area: in;
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+
+#mysubmit{
+    display: grid;
+    grid-area: sub-button;
+    height: 3em;
+}
+
+#word-label {
+    display: grid;
+    grid-area: label;
+}
