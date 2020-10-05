@@ -7,6 +7,9 @@
 <body>
     <h2 style="color: green;">{{form_response}}</h2>
     {{lots_words}} list of words
+    {% for api_word in lots_words}
+        {api_word["word"]}
+    {%endfor%}
     <!--Need to for loop and loop the words that are returned-->
     <h1>This worked</h1>
 </body>
