@@ -24,7 +24,11 @@ def create_parameter(response: str):
 def create_request(request_data: dict):
     request = requests.get('https://api.datamuse.com/words', request_data)
     sound_json = request.json()
-    print(sound_json[0])
+    print(sound_json[0], "This is the first entery in the dictionary")
+    list_of_words = sound_json[0:3]
+    print(list_of_words)
+    for i in list_of_words:
+        print(i["word"], "This should print out 3 words on single lines")
 
 def create_parameter1():
     dict_key = "ml"
